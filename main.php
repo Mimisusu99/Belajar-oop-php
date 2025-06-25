@@ -1,13 +1,20 @@
 <?php
 
-//Encapsulation
+//Constructor
 
 class Fruit{
     private $name;
     private $color;
+    private $price;
+
+    function __construct($name, $color, $price) {
+        $this->name = $name;
+        $this->color = $color;
+        $this->price = $price;
+    }
 
     function introduce () {
-        return $this->name . " - " . $this->color;
+        return $this->name . " - " . $this->color . " - " . $this->price;
     }
 
     function set_name($name) {
@@ -27,11 +34,8 @@ class Fruit{
     }
 }
 
-$apple = new Fruit();
-$apple->set_name("Apel");
-$apple->set_color("Merah");
+$apple = new Fruit("Apel", "Merah", 5000);
 
-echo $apple->get_name();
-echo $apple->get_color();
+echo $apple->introduce();
 
 ?>
