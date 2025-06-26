@@ -57,10 +57,14 @@ class Vehicle{
 }
 
 class car extends Vehicle{
-
+    function greet(){
+        return "Hi, I am a car";
+    }
 }
 
 $car = new car("Mobil Esemka", "Transparan ");
 echo $car->greet();
+
+class Battery{ private $level; function __construct($level) { $this->level = $level; } function check() { return "Current battery level is " . $this->level . "%."; } } class PhoneBattery extends Battery{ function check() { if($this->level == 100){ return "Your phone is fully charged."; } } } $var1 = new PhoneBattery(100); echo $var1->check();
 
 ?>
